@@ -1,0 +1,70 @@
+Source: libqapt-qt6
+Section: kde
+Priority: optional
+Maintainer: Debian/Kubuntu KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>
+Uploaders: Sune Vuorela <sune@debian.org>,
+           Kai Wasserbäch <curan@debian.org>,
+           Floris-Andrei Stoica-Marcu <floris.sm@gmail.com>,
+           Maximiliano Curia <maxy@debian.org>,
+           José Manuel Santamaría Lema <panfaust@gmail.com>
+Build-Depends: cmake (>= 2.8.12),
+               debhelper-compat (= 12),
+               extra-cmake-modules (>= 0.0.14),
+               gettext,
+               libapt-pkg-dev (>= 0.8.0),
+               libglib2.0-dev,
+               qt6-base-dev | qtbase5-dev,
+               qt6-tools-dev-tools | qttools5-dev-tools,
+               qt6-tools-dev | qttools5-dev,
+               qt6-5compat-dev | qtchooser,
+               libpolkit-qt6-1-dev | libpolkit-qt5-1-dev,
+               libxapian-dev,
+               pkg-config,
+Standards-Version: 4.5.0
+Homepage: https://cgit.kde.org/libqapt.git/
+Vcs-Browser: https://salsa.debian.org/qt-kde-team/extras/qapt
+Vcs-Git: https://salsa.debian.org/qt-kde-team/extras/qapt.git
+
+Package: libqapt3-qt6
+Section: libs
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Recommends: libqapt3-qt6-runtime (= ${binary:Version})
+Description: QApt library package
+ LibQApt is a Qt wrapper around the libapt-pkg library as well as an APT
+ implementation using libapt-pkg. The aim is to provide a sane API for
+ package management to ease the development of package managers written in Qt
+ and C++
+ .
+ This package contains the QApt library
+
+Package: libqapt-qt6-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libapt-pkg-dev,
+         libqapt3-qt6 (= ${binary:Version}),
+         qt6-base-dev | qtbase5-dev,
+         ${misc:Depends}
+Description: Development headers for the QApt library
+ LibQApt is a Qt wrapper around the libapt-pkg library as well as an APT
+ implementation using libapt-pkg. The aim is to provide a sane API for
+ package management to ease the development of package managers written in Qt
+ and C++
+ .
+ This package contains the development headers for the QApt library
+
+Package: libqapt3-qt6-runtime
+Architecture: any
+Depends: dde-polkit-agent | polkit-kde-agent-1 | policykit-1-gnome,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Runtime components for the QApt library
+ LibQApt is a Qt wrapper around the libapt-pkg library as well as an APT
+ implementation using libapt-pkg. The aim is to provide a sane API for
+ package management to ease the development of package managers written in Qt
+ and C++
+ .
+ This package contains the runtime components necessary for applications using
+ the QApt library to run.

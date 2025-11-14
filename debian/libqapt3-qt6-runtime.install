@@ -1,0 +1,4 @@
+etc/dbus-1/system.d/org.kubuntu.qapt6worker3.conf
+usr/bin/qapt6worker3
+usr/share/dbus-1/system-services/org.kubuntu.qapt6worker3.service
+usr/share/polkit-1/actions/org.kubuntu.qapt6worker3.policy
